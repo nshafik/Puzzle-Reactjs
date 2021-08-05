@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Tile from "./Tile";
-import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./helpers"
-import { canSwap, swap , shuffle } from "./helpers"
+import { TILE_COUNT, GRID_SIZE, BOARD_SIZE, Won,canSwap, swap , shuffle } from "./helpers"
 
 function Board({imgUrl}) {
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
-
+ 
+  const hasWon = Won(tiles)
+  
   const swapTiles = (tileIndex) => {
-    if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
+    if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1)) && !hasWon) {
       const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1))
       setTiles(swappedTiles)
     }
   }
-
+ 
   const handleTileClick = (index) => {
     swapTiles(index)
   }

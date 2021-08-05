@@ -29,6 +29,16 @@ export function getVisualPosition(row, col, width, height) {
   };
 }
 
+export function Won(tiles){
+  
+  for(var i =0; i< TILE_COUNT ; i++){
+    if(tiles[i] !== i )
+      return false;
+  }
+  return true;
+  }
+  
+
 
 export function canSwap(srcIndex, destIndex) {
   const { row: srcRow, col: srcCol } = Position(srcIndex);
