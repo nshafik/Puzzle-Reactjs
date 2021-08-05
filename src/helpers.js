@@ -1,9 +1,17 @@
 export const TILE_COUNT = 16;
 export const GRID_SIZE = 4;
 export const BOARD_SIZE = 320;
-export const imgUrl = "https://i.pinimg.com/564x/5f/80/85/5f80854fd1475958717a19e345695942.jpg";
+export const imgUrl = "https://static.independent.co.uk/2021/07/01/23/SEI85370452.jpg?width=990&auto=webp&quality=75";
 
-
+export function shuffle(tiles) {
+  const shuffledTiles = [
+    ...tiles
+      .filter((t) => t !== tiles.length - 1)
+      .sort(() => Math.random() - 0.5),
+    tiles.length - 1,
+  ];
+  return shuffledTiles;
+}
 
 
 // Get the row/col pair from a linear index.
