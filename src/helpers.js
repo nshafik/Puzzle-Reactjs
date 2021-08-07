@@ -1,20 +1,12 @@
 export const TILE_COUNT = 16;
 export const GRID_SIZE = 4;
 export const BOARD_SIZE = 320;
+export const SHUFFLE_NUM = 15;
+
 export const imgUrl = "https://static.independent.co.uk/2021/07/01/23/SEI85370452.jpg?width=990&auto=webp&quality=75";
 
-export function shuffle(tiles) {
-  const shuffledTiles = [
-    ...tiles
-      .filter((t) => t !== tiles.length - 1)
-      .sort(() => Math.random() - 0.5),
-    tiles.length - 1,
-  ];
-  return shuffledTiles;
-}
 
 
-// Get the row/col pair from a linear index.
 export function Position(index) {
   return {
     row: Math.floor(index / GRID_SIZE),
@@ -65,9 +57,22 @@ export function updateURLParameter(url, param, paramVal) {
           newAdditionalURL += temp + tempArray[i];
           temp = "&";
         }
-      }
+      } 
     }
+    
+
+
   
     var rows_txt = temp + "" + param + "=" + paramVal;
     return baseURL + "?" + newAdditionalURL + rows_txt;
+  }
+  
+  export function shuffle(tiles) {
+    const shuffledTiles = [
+      ...tiles
+        .filter((t) => t !== tiles.length - 1)
+        .sort(() => Math.random() - 0.5),
+      tiles.length - 1,
+    ];
+    return shuffledTiles;
   }

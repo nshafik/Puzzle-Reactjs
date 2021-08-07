@@ -30,7 +30,6 @@ function Tile(props) {
           style={{
             ...tileStyle,
             transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
-            // Is last tile?
             opacity: tile === TILE_COUNT - 1 ? 0 : 1,
           }}
           className="tile"
