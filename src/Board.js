@@ -16,8 +16,7 @@ function Board({imgUrl}) {
   }
 
   const shuffle = () => {
-    
-    var rand = Math.round(Math.random()*10) ; 
+    var rand = tiles[Math.floor(Math.random()*tiles.length)];
     while ( !(canSwap( tiles.length - rand, tiles.indexOf(tiles.length - 1)))) {
       rand = Math.round(Math.random()*10) ;
     }
