@@ -23,6 +23,7 @@ export function getVisualPosition(row, col, width, height) {
 
 export function Won(tiles){
   
+  console.log(tiles);
   for(var i =0; i< TILE_COUNT ; i++){
     if(tiles[i] !== i )
       return false;
