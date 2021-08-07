@@ -15,14 +15,13 @@ function Board({imgUrl}) {
     }
   }
 
-  const shuffleTiles = () => {
-    for(var i = 0; i< SHUFFLE_NUM ; i++ ){
+  const shuffle = () => {
+    
     var rand = Math.round(Math.random()*10) ; 
     while ( !(canSwap( tiles.length - rand, tiles.indexOf(tiles.length - 1)))) {
       rand = Math.round(Math.random()*10) ;
     }
       swapTiles(tiles.length - rand);
-  }
   }
   
  
@@ -30,7 +29,12 @@ function Board({imgUrl}) {
     swapTiles(index)
   }
 
+  const shuffleTiles = () => {
 
+    for(var i = 0; i< SHUFFLE_NUM ; i++ ){
+      shuffle(tiles);
+    }
+  }
 
   const pieceWidth = Math.round(BOARD_SIZE / GRID_SIZE);
   const pieceHeight = Math.round(BOARD_SIZE / GRID_SIZE);
