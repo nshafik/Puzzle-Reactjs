@@ -3,7 +3,7 @@ export const GRID_SIZE = 4;
 export const BOARD_SIZE = 320;
 export const SHUFFLE_NUM = 15;
 
-export const imgUrl = "https://static.independent.co.uk/2021/07/01/23/SEI85370452.jpg?width=990&auto=webp&quality=75";
+export const imgUrl = "https://cdn.unifiedcommerce.com/content/product/large/rgb-80017-marmaduke.jpg";
 
 
 
