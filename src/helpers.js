@@ -1,7 +1,7 @@
 export const TILE_COUNT = 16;
 export const GRID_SIZE = 4;
 export const BOARD_SIZE = 320;
-export const SHUFFLE_NUM = 15;
+export const SHUFFLE_NUM = 5;
 
 export const imgUrl = "https://cdn.unifiedcommerce.com/content/product/large/rgb-80017-marmaduke.jpg";
 
@@ -44,6 +44,7 @@ export function swap(tiles, src, dest) {
   [tilesResult[src], tilesResult[dest]] = [tilesResult[dest], tilesResult[src]];
   return tilesResult;
 }
+
 
 export function updateURLParameter(url, param, paramVal) {
     var newAdditionalURL = "";
